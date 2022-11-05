@@ -1,0 +1,17 @@
+!pip install pyopenms
+import pyopenms
+from pyopenms import *
+seq = AASequence.fromString("VAKA")
+weightofpeptide=seq.getMonoWeight()
+print(weightofpeptide)
+sum = 0
+for AA in seq :
+  print(AA.getMonoWeight())
+  sum = sum+AA.getMonoWeight()
+print(sum)
+if sum==weightofpeptide :
+  print("mass of (v)+ mass of (A) + mass of(k)+mass of(A) equal to mass of (vaka)")  
+elif sum>weightofpeptide :
+    print("mass of (v)+ mass of (A) + mass of(k)+mass of(A) greater than mass of (vaka)")
+else :
+    print("mass of (v)+ mass of (A) + mass of(k)+mass of(A) less than mass of (vaka)")  
